@@ -20,7 +20,6 @@ Welcome to the **Spring Cloud AWS SQS Integration** project! This repository dem
 - [Examples](#-examples)
 - [Testing](#-testing)
 - [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
@@ -34,5 +33,52 @@ Welcome to the **Spring Cloud AWS SQS Integration** project! This repository dem
 ### Installation
 1. Clone the repository:
    ```bash  
-   git clone https://github.com/your-username/spring-cloud-aws-sqs-integration.git  
+   git clone https://github.com/gcintir/spring-cloud-aws-sqs-messaging.git
    cd spring-cloud-aws-sqs-integration  
+
+2. Build the project:
+   ```bash  
+   mvn clean package
+
+---
+
+## 🛠️ How It Works
+
+### Sending Messages
+Use the SqsTemplate to send messages to an SQS queue with ease.
+
+### Receiving Messages
+Annotate your method with @SqsListener to automatically handle incoming messages.
+
+### Local Testing
+Simulate SQS behavior locally using LocalStack and validate your implementation with Testcontainers.
+
+---
+
+## 💡 Examples
+
+### Send Message:
+```bash  
+   sqsTemplate.convertAndSend("queueName", "Hello, SQS!");
+```
+
+### Receive Message:
+```bash  
+   @SqsListener("queueName")
+   public void handleMessage(String message) {
+      System.out.println("Received message: " + message);
+   }
+```
+
+---
+
+## ✅ Testing
+This project uses Testcontainers to ensure tests are run in an environment that mimics AWS. To test locally:
+```bash  
+   mvn test
+```
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! If you have an idea, feature request, or bug report, please open an issue or submit a pull request.
