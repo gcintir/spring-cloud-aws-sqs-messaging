@@ -34,7 +34,7 @@ Welcome to the **Spring Cloud AWS SQS Integration** project! This repository dem
 1. Clone the repository:
    ```bash  
    git clone https://github.com/gcintir/spring-cloud-aws-sqs-messaging.git
-   cd spring-cloud-aws-sqs-integration  
+   cd spring-cloud-aws-sqs-messaging 
 
 2. Build the project:
    ```bash  
